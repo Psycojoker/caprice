@@ -1,5 +1,7 @@
 import pwd
+
 from caprice.core.logging import log
+from caprice.core.shell import command
 
 
 def _user_exists(name):
@@ -10,8 +12,10 @@ def _user_exists(name):
         return False
 
 
-def _create_user(name):
-    pass
+def _create_user(name, password="!"):
+    to_run = ["useradd", "--create-home", "-p", password]
+    to_run.append(name)
+    return command(to_run)
 
 
 def user(name):
