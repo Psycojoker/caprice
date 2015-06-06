@@ -2,8 +2,6 @@ import sys
 
 
 class Logger(object):
-    # "\033[*;**(;**)m"
-    # "\033[*;**(;**)m"
     DEFAULT = "\033[0m"
     OK = "\033[0;32m"
     QUESTION = "\033[0;36m"
