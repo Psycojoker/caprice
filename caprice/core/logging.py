@@ -8,7 +8,15 @@ class Logger(object):
     OK = "\033[0;32m"
     QUESTION = "\033[0;36m"
     ACTION = "\033[1;36m"
+    SHELL = "\033[1;37m"
 
+
+    def _shell(self, message):
+        sys.stdout.write(self.SHELL)
+        sys.stdout.write("Shell: ")
+        sys.stdout.write(self.DEFAULT)
+        sys.stdout.write(message)
+        sys.stdout.write("\n")
 
     def action(self, message):
         sys.stdout.write(self.ACTION)
