@@ -1,5 +1,5 @@
 import subprocess
-from caprice.common.core.logging import log
+from caprice.core.logging import log
 
 
 def command(arguments):
