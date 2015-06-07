@@ -18,7 +18,17 @@ def _create_user(name, password="!"):
     return command(to_run)
 
 
-def user(name):
+def user(name, password):
+    log.question("check if user '%s' exists" % name)
+    if not _user_exists(name):
+        log.action("user doesn't exists, create it")
+        _create_user(name, password=password)
+    else:
+        log.ok("user exists, continue")
+
+
+def headless_user(name):
+    "Create a user that isn't able to log by password"
     log.question("check if user '%s' exists" % name)
     if not _user_exists(name):
         log.action("user doesn't exists, create it")
